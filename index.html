@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Turning wheels</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="spinning-wheel">
+        <div class="spin-btn">Spin</div>
+        <div class="wheel">
+          <div class="number" style="--i: 1; --clr: #e74645">
+            <span class="span">20</span>
+          </div>
+          <div class="number" style="--i: 2; --clr: #fb7756">
+            <span class="span">9</span>
+          </div>
+          <div class="number" style="--i: 3; --clr: #facd60">
+            <span class="span">100</span>
+          </div>
+          <div class="number" style="--i: 4; --clr: #1ac0c6">
+            <span class="span">50</span>
+          </div>
+          <div class="number" style="--i: 5; --clr: #fb569f">
+            <span class="span">30</span>
+          </div>
+          <div class="number" style="--i: 6; --clr: #a862ea">
+            <span class="span">770</span>
+          </div>
+          <div class="number" style="--i: 7; --clr: #465ca4">
+            <span class="span">5</span>
+          </div>
+          <div class="number" style="--i: 8; --clr: #ea8662">
+            <span class="span">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function (event) {
+        const spin = document.querySelector(".spin-btn");
+        const wheel = document.querySelector(".wheel");
+        let turn = Math.random() * 3600;
+        spin.addEventListener("click", function (event) {
+          wheel.style.transform = `rotate(${turn}deg)`;
+          turn += Math.random() * 3600;
+        });
+      });
+    </script>
+  </body>
+</html>
